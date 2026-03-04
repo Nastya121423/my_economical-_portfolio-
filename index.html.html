@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Економічний лендинг | Портфоліо</title>
+
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  html{scroll-behavior:smooth}
+  body{
+    color:#fff; line-height:1.6;
+    background:
+      radial-gradient(900px 500px at 15% 15%, rgba(56,189,248,0.20), transparent 60%),
+      radial-gradient(700px 450px at 85% 25%, rgba(167,139,250,0.20), transparent 55%),
+      linear-gradient(180deg,#070b16 0%, #0b1430 45%, #070b16 100%);
+  }
+
+  header{
+    position:fixed; top:0; width:100%; z-index:100;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 8%;
+    background:rgba(15,23,42,0.65);
+    border-bottom:1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+  }
+  .logo{font-size:22px;font-weight:800;color:#38bdf8}
+  nav a{
+    color:#e2e8f0; text-decoration:none; font-weight:700;
+    margin-left:16px; padding:8px 12px; border-radius:12px;
+    transition:.25s;
+  }
+  nav a:hover{background:rgba(56,189,248,0.18); color:#fff}
+
+  .hero{
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:120px 20px 70px; text-align:center;
+  }
+  .heroBox{
+    width:min(920px,92%);
+    background:rgba(2,6,23,0.58);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:24px;
+    padding:34px 26px;
+    box-shadow:0 22px 55px rgba(0,0,0,0.55);
+  }
+  .heroBox h1{font-size:clamp(34px,4vw,52px);margin-bottom:12px;line-height:1.12}
+  .heroBox h1 span{
+    background:linear-gradient(90deg,#38bdf8,#a78bfa);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .heroBox p{color:#cbd5f5;max-width:760px;margin:0 auto 18px;font-size:18px}
+  .btn{
+    display:inline-block; text-decoration:none; font-weight:800;
+    padding:14px 26px; border-radius:999px; color:#06101c;
+    background:linear-gradient(135deg,#38bdf8,#a78bfa);
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 14px 35px rgba(0,0,0,0.35);
+    transition:.25s;
+  }
+  .btn:hover{transform:translateY(-2px) scale(1.03); filter:brightness(1.05)}
+
+  section{padding:84px 8%; text-align:center}
+  #about,#projects,#contact{scroll-margin-top:90px}
+  h2{font-size:34px;color:#38bdf8;margin-bottom:14px}
+  .text{max-width:920px;margin:0 auto;color:rgba(255,255,255,0.82)}
+
+  .photos,.cards{
+    display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:28px;
+  }
+
+  .photoCard,.card{
+    width:340px; max-width:92vw;
+    background:rgba(15,23,42,0.70);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px;
+    overflow:hidden;
+    text-align:left;
+    box-shadow:0 16px 45px rgba(0,0,0,0.35);
+    transition:.3s;
+  }
+  .card{padding:16px}
+  .card:hover{transform:translateY(-10px); border-color:rgba(56,189,248,0.35)}
+
+  .imgBox{
+    position:relative;
+    height:200px;
+    background:rgba(0,0,0,0.18);
+    border-bottom:1px solid rgba(255,255,255,0.10);
+  }
+  .imgBox svg{width:100%;height:100%;display:block}
+
+  .caption{padding:12px 14px;font-weight:800;color:rgba(255,255,255,0.88)}
+
+  .card h3{color:#38bdf8;margin:10px 0 6px;font-size:20px}
+  .card p{color:rgba(255,255,255,0.82)}
+
+  /* кликабельная карточка + overlay */
+  .cardLink{display:block;color:inherit;text-decoration:none}
+  .overlay{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(0,0,0,0.55);
+    font-weight:900; letter-spacing:.2px;
+    opacity:0; transition:.25s;
+  }
+  .cardLink:hover .overlay{opacity:1}
+
+  footer{
+    padding:30px; text-align:center;
+    color:#94a3b8;
+    background:rgba(2,6,23,0.75);
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+
+  @media (max-width:640px){
+    header{flex-direction:column;gap:10px;padding:14px 6%}
+    nav a{margin-left:10px}
+  }
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">EcoPortfolio</div>
+  <nav>
+    <a href="#about">Про мене</a>
+    <a href="#projects">Проєкти</a>
+    <a href="#contact">Контакти</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="heroBox">
+    <h1>Моє портфоліо з <span>економіки</span></h1>
+    <p>Фінансова грамотність, бюджет, ціни та економічні міні-проєкти — в одному лендингу.</p>
+    <a class="btn" href="#projects">Переглянути проєкти</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Про мене</h2>
+  <p class="text">
+    Мене звати Анастасія. Мені цікава економіка, фінанси та планування бюджету.
+    Я люблю аналізувати ціни, рахувати відсотки та ставити фінансові цілі.
+  </p>
+
+  <div class="photos">
+    <!-- “Фото” 1: бюджет (SVG-картинка) -->
+    <figure class="photoCard">
+      <div class="imgBox">
+        <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#38bdf8" stop-opacity="0.55"/>
+              <stop offset="1" stop-color="#a78bfa" stop-opacity="0.35"/>
+            </linearGradient>
+          </defs>
+          <rect width="900" height="520" fill="url(#g1)"/>
+          <rect x="70" y="90" width="760" height="340" rx="22" fill="rgba(2,6,23,0.45)" stroke="rgba(255,255,255,0.22)"/>
+          <rect x="120" y="150" width="420" height="24" rx="12" fill="rgba(255,255,255,0.55)"/>
+          <rect x="120" y="200" width="320" height="18" rx="9" fill="rgba(255,255,255,0.38)"/>
+          <rect x="120" y="240" width="380" height="18" rx="9" fill="rgba(255,255,255,0.30)"/>
+          <circle cx="690" cy="255" r="78" fill="rgba(255,255,255,0.16)"/>
+          <path d="M690 192 L720 262 L665 240 Z" fill="#38bdf8" opacity="0.9"/>
+          <path d="M690 192 L665 240 L650 210 Z" fill="#a78bfa" opacity="0.9"/>
+          <path d="M690 192 L650 210 L680 280 Z" fill="#22c55e" opacity="0.85"/>
+          <rect x="120" y="315" width="540" height="22" rx="11" fill="rgba(255,255,255,0.22)"/>
+          <rect x="120" y="355" width="500" height="18" rx="9" fill="rgba(255,255,255,0.18)"/>
+        </svg>
+      </div>
+      <figcaption class="caption">Планування бюджету</figcaption>
+    </figure>
+
+    <!-- “Фото” 2: графіки -->
+    <figure class="photoCard">
+      <div class="imgBox">
+        <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0ea5e9" stop-opacity="0.35"/>
+              <stop offset="1" stop-color="#a78bfa" stop-opacity="0.35"/>
+            </linearGradient>
+          </defs>
+          <rect width="900" height="520" fill="url(#g2)"/>
+          <g stroke="rgba(255,255,255,0.22)" stroke-width="2">
+            <line x1="90" y1="420" x2="840" y2="420"/>
+            <line x1="90" y1="120" x2="90" y2="420"/>
+            <line x1="90" y1="340" x2="840" y2="340" opacity="0.5"/>
+            <line x1="90" y1="260" x2="840" y2="260" opacity="0.35"/>
+            <line x1="90" y1="180" x2="840" y2="180" opacity="0.25"/>
+          </g>
+          <path d="M120 360 L240 310 L360 330 L480 250 L600 270 L720 210 L820 230"
+                fill="none" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M120 380 L240 360 L360 300 L480 320 L600 240 L720 260 L820 190"
+                fill="none" stroke="#a78bfa" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <g fill="rgba(255,255,255,0.85)">
+            <circle cx="240" cy="310" r="8"/><circle cx="480" cy="250" r="8"/><circle cx="720" cy="210" r="8"/>
+          </g>
+        </svg>
+      </div>
+      <figcaption class="caption">Графіки та аналітика</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Мої економічні проєкти</h2>
+
+  <div class="cards">
+    <!-- Карточка YouTube -->
+    <article class="card">
+      <a class="cardLink" href="https://youtu.be/0rb2PBTZzMo?si=YmI7vNbOb31sEcfT" target="_blank" rel="noopener">
+        <div class="imgBox">
+          <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+            <rect width="900" height="520" fill="rgba(56,189,248,0.22)"/>
+            <rect x="120" y="110" width="660" height="300" rx="26" fill="rgba(2,6,23,0.55)" stroke="rgba(255,255,255,0.18)"/>
+            <rect x="170" y="160" width="420" height="22" rx="11" fill="rgba(255,255,255,0.50)"/>
+            <rect x="170" y="205" width="360" height="18" rx="9" fill="rgba(255,255,255,0.32)"/>
+            <rect x="170" y="245" width="390" height="18" rx="9" fill="rgba(255,255,255,0.24)"/>
+            <g>
+              <circle cx="650" cy="265" r="78" fill="rgba(255,255,255,0.12)"/>
+              <polygon points="630,230 710,265 630,300" fill="#38bdf8"/>
+            </g>
+          </svg>
+          <div class="overlay">▶ Дивитися відео</div>
+        </div>
+        <h3>Планування бюджету</h3>
+        <p>Натисни, щоб відкрити відео на YouTube.</p>
+      </a>
+    </article>
+
+    <article class="card">
+      <div class="imgBox">
+        <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+          <rect width="900" height="520" fill="rgba(34,197,94,0.16)"/>
+          <rect x="140" y="140" width="140" height="260" rx="18" fill="rgba(34,197,94,0.65)"/>
+          <rect x="320" y="200" width="140" height="200" rx="18" fill="rgba(56,189,248,0.55)"/>
+          <rect x="500" y="170" width="140" height="230" rx="18" fill="rgba(167,139,250,0.55)"/>
+          <rect x="680" y="230" width="140" height="170" rx="18" fill="rgba(255,255,255,0.18)"/>
+          <line x1="110" y1="410" x2="840" y2="410" stroke="rgba(255,255,255,0.25)" stroke-width="6"/>
+        </svg>
+      </div>
+      <h3>Аналіз цін</h3>
+      <p>Порівняння цін і короткі висновки про зміни.</p>
+    </article>
+
+    <article class="card">
+      <div class="imgBox">
+        <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+          <rect width="900" height="520" fill="rgba(167,139,250,0.18)"/>
+          <path d="M120 390 C240 300, 320 420, 440 310 C560 200, 640 300, 780 190"
+                fill="none" stroke="#38bdf8" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="780" cy="190" r="16" fill="#a78bfa"/>
+          <circle cx="440" cy="310" r="12" fill="rgba(255,255,255,0.75)"/>
+          <rect x="140" y="120" width="620" height="80" rx="22" fill="rgba(2,6,23,0.50)" stroke="rgba(255,255,255,0.16)"/>
+          <rect x="180" y="150" width="300" height="18" rx="9" fill="rgba(255,255,255,0.35)"/>
+          <rect x="180" y="175" width="240" height="14" rx="7" fill="rgba(255,255,255,0.22)"/>
+        </svg>
+      </div>
+      <h3>Фінансові цілі</h3>
+      <p>SMART-цілі та план накопичення коштів.</p>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Контакти</h2>
+  <p class="text">Зв’язок для навчальних проєктів та презентацій з економіки.</p>
+  <br />
+  <a class="btn" href="#">Написати</a>
+</section>
+
+<footer>© 2026 EcoPortfolio</footer>
+</body>
+</html>
